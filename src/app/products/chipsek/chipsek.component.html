@@ -1,1 +1,32 @@
-<p>chipsek works!</p>
+<!-- 
+<div class="chipsek-lista">
+    <h2>Chipsek</h2>
+    
+    <div class="chips-item" *ngFor="let chips of chipsek">
+      <div class="chips-card">
+        <img [src]="chips.image" alt="{{ chips.nev }}" class="chips-kep" />
+        <h3>{{ chips.nev }}</h3>
+        <p>{{ chips.ar }} Ft</p>
+      </div>
+    </div>
+  </div>
+   -->
+
+   <div class="chipsek-lista">
+  
+    <div class="chips-item" *ngFor="let chips of chipsek; let i = index">
+      <div class="chips-card">
+        <img [src]="chips.image" alt="{{ chips.nev }}" class="chips-kep" />
+        <h3>{{ chips.nev }}</h3>
+        <p>{{ chips.ar }} Ft</p>
+  
+        <div class="mennyiseg">
+          <label for="darab">Mennyiség:</label>
+          <input type="number" [(ngModel)]="chips.darab" min="1" />
+        </div>
+  
+        <button (click)="kosarbaRak(i)" class="kosar-gomb">Kosárba rakom</button>
+      </div>
+    </div>
+  </div>
+  
